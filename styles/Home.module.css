@@ -1,0 +1,643 @@
+.header{
+
+  color: rgb(120,120,120);
+  font-weight:500;
+
+}
+
+/*##############################*/
+/*########## MAIN PAGE ###########*/
+/*##############################*/
+
+.container {
+
+
+  padding:  1rem;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+.MecenateMagazineLogo{
+
+  display: flex;
+  width:70%;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-width: 0px;
+  border-color: rgb(200,200,200)
+}
+
+.MecenateMagazineBar{
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 0px;
+  box-shadow: 1px 1px 5px rgba(174,26,22,0.3);
+  width: 100%;
+  height: 50px;
+  padding-left: 30%;
+  padding-right:30%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(174,26,22,1)
+}
+
+.MecenateMagazineBarInside{
+  
+  display: flex;
+  width: 100%;
+  height: 40px;
+}
+
+.contentContainer{
+
+  padding-left: 220px;
+  padding-right: 220px;
+}
+
+/*##############################*/
+/*########## TOP BAR ###########*/
+/*##############################*/
+
+.topBarContainer{
+
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(0,0,0,0.1)
+}
+
+.topBarLink{
+  
+  margin-left: 20px;
+  color: black;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.topBarLink:hover{
+
+  color: rgba(174,26,22,1);
+  background-color: rgba(174,26,22,.05);
+  
+}
+
+.topBarLogo{
+
+  width: 50px;
+}
+
+
+/*##############################*/
+/* ###### CARD HIGHLIGHT #######*/
+/*##############################*/
+
+
+.cardHighlightContainerGeneral{
+
+  margin-bottom: 120px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.cardHighlightContainer{
+
+  display: flex;
+  color: black;
+  margin-top: 50px;
+  justify-content: center;
+  width: 30vw;
+  background-image: url("/Klevra_figure.jpg/"); 
+  height: 350px;
+  background-size: 100%;
+  background-position: 50% 50%;
+}
+
+.cardHighlightContainer:hover{
+
+  box-shadow:inset 0 0 0 2000px rgba(174,26,22,.1);;
+}
+
+.cardHighlightImg{
+
+  width: 100%;
+  height: 350px;
+
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.cardHighlightTXT{
+  
+  position: absolute;
+  margin-top: 270px;
+  background-color: white;
+  width: 25%;
+  padding: 15px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(174,26,22,0.5)
+}
+
+
+.cardHighlightTXTsection{
+  
+  text-align: center;
+  font-weight: 500;
+}
+
+.cardHighlightTXTtitle{
+  
+  margin-top: 10px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.cardHighlightTXTauthorContainer{
+  
+  display: flex;
+  margin-top: 7px;
+  justify-content: center;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.cardHighlightTXTauthor{
+  
+  display: flex;
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+/*##############################*/
+/* ###### CARD NEWS ############*/
+/*##############################*/
+.cardNewsContainerGeneral{
+
+  display:grid;
+  color: black;
+  text-decoration: none;
+}
+
+.cardNewsContainerOverlay{
+
+  display: grid;
+  grid-area: 1 / 1;
+  background-color: white;
+  margin-top: 50px;
+  width: 100%;
+  height: 250px;
+  opacity: 0;
+}
+
+.cardNewsContainerOverlay:hover{
+
+  display: grid;
+  grid-area: 1 / 1;
+  background-color: rgba(174,26,22,.05);
+  margin-top: 50px;
+  width: 100%;
+  height: 250px;
+  opacity: 1;
+}
+
+
+.cardNewsContainer{
+
+  display:flex;
+  grid-area: 1 / 1;
+  align-items: center;
+  width:85%; 
+ 
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+
+
+
+.cardNewsIMG{
+
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.cardNewsTXT{
+
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  
+}
+
+.cardNewsTXTheader{
+
+  font-weight: 600;
+}
+
+.cardNewsTXTtitle{
+
+  margin-top: 10px;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.cardNewsTXTsubtitle{
+
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(0,0,0,1)
+}
+
+.cardNewsTXTauthorBar{
+  
+  margin-top: 7px;
+  display: flex;
+  font-weight: 400;
+}
+
+.cardNewsTXTauthorAuthor{
+
+  margin-left: 5px;
+  font-weight: 500;
+}
+
+.cardNewsTXTauthorDate{
+
+  margin-left: 5px;
+  font-weight: 400;
+}
+
+/*#################################*/
+/*########  CREATE ARTICLE  #######*/
+/*#################################*/
+
+
+.createArticleFields{
+
+  display: flex;
+
+  height: 500px;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin-bottom: 50px;
+
+}
+
+/*#################################*/
+/*########   ARTICLE  #######*/
+/*#################################*/
+
+
+.articleSection{
+
+  margin-top: 100px;
+  font-weight: bold;
+  font-size: 22px;
+  font-variant: small-caps;
+
+}
+
+.articleTitle{
+
+  font-size: 45px;
+  font-weight:500;
+
+}
+
+.articleSubtitle{
+
+  margin-top: 5px;
+  font-size: 25px;
+  color: rgb(75,75,75);
+
+}
+
+.articleAuthorDateBar{
+
+  display: flex;
+  margin-top: 10px;
+  
+}
+
+.articleAuthor{
+
+  font-weight: bold;
+
+}
+
+.articleDate{
+
+  margin-left: 5px;
+
+}
+
+.articleArticle{
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+
+  .container {
+
+  display: flex;
+  flex-direction: column;
+  padding:  10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100vw;
+  
+}
+
+.MecenateMagazineLogo{
+
+  
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+ 
+}
+
+.MecenateMagazineBar{
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 0px;
+  box-shadow: 1px 1px 5px rgba(174,26,22,0.3);
+  width: 100%;
+  height: 50px;
+  padding-left: 3%;
+  padding-right:3%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(174,26,22,1);
+  
+}
+
+.MecenateMagazineBarInside{
+  
+  display: flex;
+  width: 100%;
+  height: 40px;
+  zoom: .7;
+}
+
+.contentContainer{
+
+  padding-left: 10px;
+  padding-right: 10px;
+}
+ 
+/*##############################*/
+/*########## TOP BAR ###########*/
+/*##############################*/
+
+.topBarContainer{
+
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(0,0,0,0.1)
+}
+
+.topBarLink{
+  
+  margin-left: 20px;
+  color: black;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 10px;
+}
+
+.topBarLink:hover{
+
+  color: rgba(174,26,22,1);
+  background-color: rgba(174,26,22,.05);
+  
+}
+
+.topBarLogo{
+
+  width: 30px;
+}
+
+/*##############################*/
+/* ###### CARD HIGHLIGHT #######*/
+/*##############################*/
+
+
+.cardHighlightContainerGeneral{
+
+  display: block;
+  margin-bottom: 170px;
+}
+
+.cardHighlightContainer{
+
+  display: flex;
+  color: black;
+  margin-top: 50px;
+  justify-content: center;
+  width: 100%;
+  background-image: url("/Klevra_figure.jpg/"); 
+  height: 250px;
+  background-size: 100%;
+  background-position: 50% 50%;
+}
+
+.cardHighlightContainer:hover{
+
+  box-shadow:inset 0 0 0 2000px rgba(174,26,22,.1);;
+}
+
+
+
+.cardHighlightTXT{
+  
+  position: absolute;
+  margin-top: 200px;
+  background-color: white;
+  width: 75%;
+  padding: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(174,26,22,0.5)
+}
+
+
+.cardHighlightTXTsection{
+  
+  font-size: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.cardHighlightTXTtitle{
+  
+  font-size: 15px;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 300;
+}
+
+.cardHighlightTXTauthorContainer{
+  
+  display: flex;
+  margin-top: 7px;
+  justify-content: center;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.cardHighlightTXTauthor{
+  
+  display: flex;
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+/*##############################*/
+/* ###### CARD NEWS ############*/
+/*##############################*/
+
+
+.cardNewsContainerGeneral{
+
+  display:grid;
+  color: black;
+  text-decoration: none;
+}
+
+.cardNewsContainerOverlay{
+
+  display: grid;
+  grid-area: 1 / 1;
+  background-color: white;
+  margin-top: 0px;
+  width: 100%;
+  height: 125px;
+  opacity: 0;
+}
+
+.cardNewsContainerOverlay:hover{
+
+  display: grid;
+  grid-area: 1 / 1;
+  background-color: rgba(174,26,22,.05);
+  margin-top: 0px;
+  width: 100%;
+  height: 125px;
+  opacity: 1;
+}
+
+
+.cardNewsContainer{
+
+  display:flex;
+  grid-area: 1 / 1;
+  align-items: flex-start;
+  width:100%; 
+  justify-content: space-between;
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+}
+
+
+
+.cardNewsIMG{
+
+  height: 125px;
+  width: 125px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.cardNewsTXT{
+
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  font-size: 10px;
+}
+
+.cardNewsTXTheader{
+
+  font-weight: 600;
+}
+
+.cardNewsTXTtitle{
+
+  
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 400;
+
+}
+
+.cardNewsTXTsubtitle{
+
+  display: none;
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(0,0,0,1)
+}
+
+.cardNewsTXTauthorBar{
+  
+  margin-top: 7px;
+  display: flex;
+  font-weight: 400;
+}
+
+.cardNewsTXTauthorAuthor{
+
+  margin-left: 5px;
+  font-weight: 500;
+}
+
+.cardNewsTXTauthorDate{
+
+  margin-left: 5px;
+  font-weight: 400;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
