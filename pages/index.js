@@ -23,6 +23,7 @@ const QuillNoSSRWrapper = dynamic(import('react-quill'), {
 import styles from "../styles/Home.module.css";
 
 
+{/*
 
 Home.getInitialProps = async ({query}) => {
 
@@ -35,6 +36,8 @@ Home.getInitialProps = async ({query}) => {
         data: data,
     }
 };
+
+*/}
 
 
 
@@ -94,4 +97,22 @@ export default function Home({data}) {
 
 
   );
+}
+
+
+
+// This gets called on every request
+export async function getServerSideProps() {
+  // Fetch data from external API
+  
+
+  const result = await fetch('http://dev-api.artmecenate.com/magazine/articles?limit=10&offset=0');
+  const data = await result.json()
+
+  // Pass data to the page via props
+  return { 
+    props: { 
+      data: data 
+    }, 
+  }
 }

@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import MenuBar from "../public/menuBar";
-import dynamic from 'next/dynamic'
+
 
 import {
   FacebookShareButton,
@@ -50,31 +50,14 @@ import {
   EmailIcon,
 } from 'next-share'
 
-const QuillNoSSRWrapper = dynamic(import('react-quill'), {  
-  ssr: false,
-  loading: () => <p>Loading ...</p>,
-  })
+
 
 import styles from "../styles/Home.module.css";
-import 'react-quill/dist/quill.snow.css';
-import 'suneditor/dist/css/suneditor.min.css'; // Import Sun Editor's CSS File
 
 
 
 
 
-Article.getInitialProps = async ({query}) => {
-
-  const result = await fetch('http://dev-api.artmecenate.com/magazine/article/Title_Test_32');
-  const data = await result.json()
-
-
-    return {
-
-        data: data,
-
-    }
-};
 
 
 export default function Article({data}) {
@@ -194,4 +177,19 @@ export default function Article({data}) {
 
 
   );
+}
+
+export async function getServerSideProps() {
+  // Fetch data from external API
+  
+
+  const result = await fetch('http://dev-api.artmecenate.com/magazine/article/The_Top_30_Most_Exciting_Street_Artists_Right_Now:_Part_III_36');
+  const data = await result.json()
+
+  // Pass data to the page via props
+  return { 
+    props: { 
+      data: data 
+    }, 
+  }
 }

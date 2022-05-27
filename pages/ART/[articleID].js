@@ -1,10 +1,8 @@
 import Head from "next/head";
 import React, {useState} from "react";
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
 import MenuBar from "../../public/menuBar";
 import TopBar from "../../public/topBar";
-import dynamic from 'next/dynamic'
+
 
 import {
   FacebookShareButton,
@@ -51,19 +49,15 @@ import {
   EmailIcon,
 } from 'next-share'
 
-const QuillNoSSRWrapper = dynamic(import('react-quill'), {  
-  ssr: false,
-  loading: () => <p>Loading ...</p>,
-  })
+
 
 import styles from "../../styles/Home.module.css";
-import 'react-quill/dist/quill.snow.css';
-import 'suneditor/dist/css/suneditor.min.css'; // Import Sun Editor's CSS File
 
 
 
 
 
+{/* 
 ARTArticle.getInitialProps = async ({query}) => {
 
   const result = await fetch('http://dev-api.artmecenate.com/magazine/article/'+ query.articleID);
@@ -77,6 +71,8 @@ ARTArticle.getInitialProps = async ({query}) => {
 
     }
 };
+
+*/}
 
 
 export default function ARTArticle({data, link}) {
@@ -196,4 +192,20 @@ export default function ARTArticle({data, link}) {
 
 
   );
+}
+
+export async function getServerSideProps({query}) {
+  // Fetch data from external API
+  
+
+  const result = await fetch('http://dev-api.artmecenate.com/magazine/article/'+ query.articleID);
+  const data = await result.json()
+
+  // Pass data to the page via props
+  return { 
+    props: { 
+      data: data,
+      link: query.articleID, 
+    }, 
+  }
 }
