@@ -3,15 +3,13 @@ import Image from 'next/image'
 import mecenateBlogLogo from '../public/MecenateMagazine2.png'
 import Link from '@mui/material/Link';
 
-import AppBar from '@mui/material/AppBar';
-import ToolBar from '@mui/material/ToolBar';
 import Button from '@mui/material/Button';
 
 import MenuBar from "../public/menuBar";
 
 import CardHighlight from "../public/cardHighlight";
 import CardNews from "../public/cardNews";
-import TopBar from "../public/TopBar";
+import TopBar from "../public/topBar";
 
 import React, { useState } from "react";
 import 'react-quill/dist/quill.snow.css';

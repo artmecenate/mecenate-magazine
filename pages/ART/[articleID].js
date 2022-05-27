@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import MenuBar from "../../public/menuBar";
-import TopBar from "../../public/TopBar";
+import TopBar from "../../public/topBar";
 import dynamic from 'next/dynamic'
 
 import {

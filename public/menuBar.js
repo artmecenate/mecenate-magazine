@@ -1,7 +1,5 @@
 import Head from "next/head";
 import Image from 'next/image'
-import AppBar from '@mui/material/AppBar';
-import ToolBar from '@mui/material/ToolBar';
 import Button,  { ButtonProps }  from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 
