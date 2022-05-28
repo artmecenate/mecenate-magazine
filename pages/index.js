@@ -1,24 +1,11 @@
 import Head from "next/head";
-import Image from 'next/image'
+
 import mecenateBlogLogo from '../public/MecenateMagazine2.png'
-import Link from '@mui/material/Link';
-
 import Button from '@mui/material/Button';
-
 import MenuBar from "../public/menuBar";
-
 import CardHighlight from "../public/cardHighlight";
 import CardNews from "../public/cardNews";
 import TopBar from "../public/topBar";
-
-import React, { useState } from "react";
-import 'react-quill/dist/quill.snow.css';
-import dynamic from 'next/dynamic'
-const QuillNoSSRWrapper = dynamic(import('react-quill'), {  
-  ssr: false,
-  loading: () => <p>Loading ...</p>,
-  })
-
 
 import styles from "../styles/Home.module.css";
 
@@ -106,7 +93,7 @@ export async function getServerSideProps() {
   // Fetch data from external API
   
 
-  const result = await fetch('http://dev-api.artmecenate.com/magazine/articles?limit=10&offset=0');
+  const result = await fetch('https://api.artmecenate.com/magazine/articles?limit=10&offset=0');
   const data = await result.json()
 
   // Pass data to the page via props

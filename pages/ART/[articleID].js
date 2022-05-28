@@ -198,7 +198,7 @@ export async function getServerSideProps({query}) {
   // Fetch data from external API
   
 
-  const result = await fetch('http://dev-api.artmecenate.com/magazine/article/'+ query.articleID);
+  const result = await fetch('https://api.artmecenate.com/magazine/article/'+ query.articleID);
   const data = await result.json()
 
   // Pass data to the page via props
