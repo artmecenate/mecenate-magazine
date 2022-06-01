@@ -89,7 +89,7 @@ export default function Home({data}) {
 
 
 // This gets called on every request
-export async function getServerSideProps() {
+export async function getStaticProps() {
   // Fetch data from external API
   
 

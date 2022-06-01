@@ -1,7 +1,8 @@
 import Head from "next/head";
 import React, {useState} from "react";
-import MenuBar from "../../public/menuBar";
-import TopBar from "../../public/topBar";
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import MenuBar from "../public/menuBar";
 
 
 import {
@@ -51,31 +52,15 @@ import {
 
 
 
-import styles from "../../styles/Home.module.css";
+import styles from "../styles/Home.module.css";
 
 
 
 
 
-{/* 
-ARTArticle.getInitialProps = async ({query}) => {
-
-  const result = await fetch('http://dev-api.artmecenate.com/magazine/article/'+ query.articleID);
-  const data = await result.json()
 
 
-    return {
-
-        data: data,
-        link: query.articleID,
-
-    }
-};
-
-*/}
-
-
-export default function ARTArticle({data, link}) {
+export default function Article({data}) {
 
 
   return (
@@ -84,7 +69,7 @@ export default function ARTArticle({data, link}) {
     <div className={styles.container}>
       
   
-      <TopBar/>
+
       <img src= "/MecenateMagazine4.png/" className = {styles.MecenateMagazineLogo}/>
 
       <div className = {styles.contentContainer}>
@@ -194,30 +179,19 @@ export default function ARTArticle({data, link}) {
   );
 }
 
-export async function getStaticPaths(){
 
-  return{
-    paths:[
-      {
-              params:{articleID:'Test__1'}
-      }
-    ],
-    fallback: false,
-  }
-}
 
-export async function getStaticProps({params}) {
+export async function getStaticProps() {
   // Fetch data from external API
   
-  
-  const result = await fetch('https://api.artmecenate.com/magazine/article/'+ params.articleID);
+
+  const result = await fetch('http://dev-api.artmecenate.com/magazine/article/The_Top_30_Most_Exciting_Street_Artists_Right_Now:_Part_III_36');
   const data = await result.json()
 
   // Pass data to the page via props
   return { 
     props: { 
-      data: data,
-      link: params.articleID, 
+      data: data 
     }, 
   }
 }
