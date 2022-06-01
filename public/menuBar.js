@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from 'next/image'
+
 import Button,  { ButtonProps }  from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 

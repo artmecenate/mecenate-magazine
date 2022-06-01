@@ -14,7 +14,7 @@
     "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.6.1",
     "multiparty": "^4.2.3",
-    "next": "latest",
+    "next": "12.1.4",
     "next-share": "^0.13.0",
     "react": "18.0.0",
     "react-dom": "18.0.0",
