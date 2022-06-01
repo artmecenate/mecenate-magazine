@@ -9,7 +9,7 @@ export default function TopBar() {
 
 
       <div className = {styles.topBarContainer}>
-        <img src= "/Logo_logo.png/" className = {styles.topBarLogo}/>
+        <img src= "Logo_logo.png/" className = {styles.topBarLogo}/>
 
         <a href="https://artmecenate.com" className = {styles.topBarLink}> artMecenate.com </a>
       </div>
