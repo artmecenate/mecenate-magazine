@@ -41,7 +41,7 @@ export default function Home({data}) {
 
       <TopBar/>
 
-      <img src= "/MecenateMagazine4.jpeg/" className = {styles.MecenateMagazineLogo}/>
+      <img src= "https://da4czav-3sl8rsz.s3.amazonaws.com/public/MecenateMagazine4.png" className = {styles.MecenateMagazineLogo}/>
 
       <div className = {styles.contentContainer}>
           
