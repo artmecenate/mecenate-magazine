@@ -647,24 +647,26 @@
 
 .articleSection{
 
-  margin-top: 50px;
+  margin-top: 40px;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 30px;
   font-variant: small-caps;
 
 }
 
 .articleTitle{
 
-  font-size: 30px;
+  font-size: 25px;
   font-weight:500;
+
+  width: 80%;
 
 }
 
 .articleSubtitle{
 
   margin-top: 5px;
-  font-size: 20px;
+  font-size: 15px;
   color: rgb(75,75,75);
 
 }
@@ -689,9 +691,15 @@
 }
 .articleArticle{
 
-  margin-top: 100px;
+  margin-top: 0px;
   margin-bottom: 30px;
-  font-size: 20px;
+  font-size: 12px;
+
+  width: 100%;
+
+  overflow: clip;
+
+  
 
 }
 

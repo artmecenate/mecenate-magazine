@@ -196,10 +196,10 @@ export async function getStaticPaths() {
   const posts = await res.json()
 
   
-  const paths = posts.map((post) => (post.section == 'ART' ? ({
+  const paths = posts.map((post) => ({
     params: { articleID: post.url },
-  })
-  : ''
+  }
+  
   ))
 
   
