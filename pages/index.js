@@ -28,7 +28,7 @@ Home.getInitialProps = async ({query}) => {
 
 
 
-export default function Home({data}) {
+export default function Home() {
 
 
 
@@ -58,25 +58,7 @@ export default function Home({data}) {
 
           <hr/>
 
-          <div >
-
-            { data.map((News, i) => (
-
-                 <CardNews id = {News.id} 
-                           title = {News.title} 
-                           subtitle = {News.subtitle} 
-                           author = {News.author}
-                           section = {News.section}
-                           subsection = {News.subsection}
-                           format = {News.format}
-                           content = {News.content}
-                           picture = {News.picture}
-                           url = {News.url}
-                           date = {News.time_stamp}     
-
-                           key = {i} index = {'n'+i}/> ))              
-            }
-         </div>
+      
 
         </div>
 
@@ -88,18 +70,4 @@ export default function Home({data}) {
 
 
 
-// This gets called on every request
-export async function getStaticProps() {
-  // Fetch data from external API
-  
 
-  const result = await fetch('https://api.artmecenate.com/magazine/articles?limit=10&offset=0');
-  const data = await result.json()
-
-  // Pass data to the page via props
-  return { 
-    props: { 
-      data: data 
-    }, 
-  }
-}
