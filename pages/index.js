@@ -9,7 +9,7 @@ import TopBar from "../public/topBar";
 
 import styles from "../styles/Home.module.css";
 
-import {BASE_URL, HOME} from '../constants/apiConstants'
+
 
 
 {/*
@@ -43,7 +43,7 @@ export default function Home({data}) {
 
       <TopBar/>
 
-      <a href = {HOME}>
+      <a href = 'mag.artmecenate.com'>
         <img src= "https://da4czav-3sl8rsz.s3.amazonaws.com/public/MecenateMagazine4.png" className = {styles.MecenateMagazineLogo}/>
       </a>
 
@@ -97,7 +97,7 @@ export async function getStaticProps() {
   // Fetch data from external API
   
 
-  const result = await fetch(BASE_URL+'magazine/articles?limit=10&offset=0');
+  const result = await fetch('https://api.artmecenate.com/magazine/articles?limit=10&offset=0');
   const data = await result.json()
 
   // Pass data to the page via props
