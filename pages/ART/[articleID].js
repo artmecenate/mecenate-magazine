@@ -2,7 +2,6 @@ import Head from "next/head";
 import React, {useState} from "react";
 import MenuBar from "../../public/menuBar";
 import TopBar from "../../public/topBar";
-import {BASE_URL, HOME} from '../../constants/apiConstants'
 
 
 import {
@@ -83,20 +82,10 @@ export default function ARTArticle({data, link}) {
 
 
     <div className={styles.container}>
-
-      <Head>
-        <meta property="og:type"               content="article" />
-        <meta property="og:type:author"        content= {HOME} />
-        <meta property="og:title"              content= {data.title} />
-        <meta property="og:description"        content= {data.subtitle} />
-        <meta property="og:image"              content={data.picture} /> 
-      </Head>
       
   
       <TopBar/>
-      <a href = {HOME}>
-        <img src= "https://da4czav-3sl8rsz.s3.amazonaws.com/public/MecenateMagazine4.png" className = {styles.MecenateMagazineLogo}/>
-      </a>
+      <img src= "/MecenateMagazine4.png/" className = {styles.MecenateMagazineLogo}/>
 
       <div className = {styles.contentContainer}>
         <MenuBar/>
@@ -110,11 +99,9 @@ export default function ARTArticle({data, link}) {
         </div>
 
 
-        <div className = {styles.articleArticle}>  
+        <div className = {styles.articleArticle}> Article </div>
 
-          <div dangerouslySetInnerHTML={{ __html: data.content }} />
-
-        </div>
+        <div dangerouslySetInnerHTML={{ __html: data.content }} />
 
 
 
@@ -122,22 +109,23 @@ export default function ARTArticle({data, link}) {
         {/*############ SHARING BUTTONS ##############*/}
 
         <FacebookShareButton
-          url={HOME+'ART/'+data.url}
-
+          url={'https://github.com/next-share'}
+          quote={'next-share is a social share buttons for your next React apps.'}
+          hashtag={'#nextshare'}
         >
           <FacebookIcon size={32} round />
         </FacebookShareButton>
 
         <FacebookMessengerShareButton
-          url={HOME+'ART/'+data.url}
+          url={'https://github.com/next-share'}
           appId={''}
         >
           <FacebookMessengerIcon size={32} round />
         </FacebookMessengerShareButton>
 
         <TwitterShareButton
-          url={HOME+'ART/'+data.url}
-          title={data.title}
+          url={'https://github.com/next-share'}
+          title={'next-share is a social share buttons for your next React apps.'}
         >
           <TwitterIcon size={32} round />
         </TwitterShareButton>
@@ -145,33 +133,50 @@ export default function ARTArticle({data, link}) {
 
 
         <WhatsappShareButton
-          url={HOME+'ART/'+data.url}
-          title={data.title}
+          url={'https://github.com/next-share'}
+          title={'next-share is a social share buttons for your next React apps.'}
           separator=":: "
         >
           <WhatsappIcon size={32} round />
         </WhatsappShareButton>
 
+        <LinkedinShareButton url={'https://github.com/next-share'}>
+          <LinkedinIcon size={32} round />
+        </LinkedinShareButton>
 
         <PinterestShareButton
-          url={HOME+'ART/'+data.url}
-          media={data.title}
+          url={'https://github.com/next-share'}
+          media={'next-share is a social share buttons for your next React apps.'}
         >
           <PinterestIcon size={32} round />
         </PinterestShareButton>
 
         <RedditShareButton
-          url={HOME+'ART/'+data.url}
-          title={data.title}
+          url={'https://github.com/next-share'}
+          title={'next-share is a social share buttons for your next React apps.'}
         >
           <RedditIcon size={32} round />
         </RedditShareButton>
 
-       
+        <TwitterShareButton
+          url={'https://github.com/next-share'}
+          title={'next-share is a social share buttons for your next React apps.'}
+        >
+          <TwitterIcon size={32} round />
+        </TwitterShareButton>
+
+        <WeiboShareButton
+          url={'https://github.com/next-share'}
+          title={'next-share is a social share buttons for your next React apps.'}
+          image={''}
+        >
+          <WeiboIcon size={32} round />
+        </WeiboShareButton>
+
         <EmailShareButton
-          url={HOME+'ART/'+data.url}
-          subject={'Check this article on magMecenate'}
-          body={data.title + ': '}
+          url={'https://github.com/next-share'}
+          subject={'Next Share'}
+          body="body"
         >
           <EmailIcon size={32} round />
         </EmailShareButton>
@@ -189,47 +194,23 @@ export default function ARTArticle({data, link}) {
   );
 }
 
-export async function getStaticPaths() {
-
-  
-  const res = await fetch(BASE_URL + 'magazine/articles?limit=10&offset=0')
-  const posts = await res.json()
-
-  
-  const paths = posts.map((post) => ({
-    params: { articleID: post.url },
-  }
-  
-  ))
-
-  
-  return { paths, fallback: false }
-}
-
-{/*
-
 export async function getStaticPaths(){
 
   return{
     paths:[
       {
               params:{articleID:'Test__1'}
-      },
-      {
-              params:{articleID:'Interviews:_a_chat_with_Mr_Klevra_in_his_studio_4'}
       }
     ],
     fallback: false,
   }
 }
 
-*/}
-
 export async function getStaticProps({params}) {
   // Fetch data from external API
   
   
-  const result = await fetch(BASE_URL + 'magazine/article/'+ params.articleID);
+  const result = await fetch('https://api.artmecenate.com/magazine/article/'+ params.articleID);
   const data = await result.json()
 
   // Pass data to the page via props
@@ -237,7 +218,6 @@ export async function getStaticProps({params}) {
     props: { 
       data: data,
       link: params.articleID, 
-
     }, 
   }
 }

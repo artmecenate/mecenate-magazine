@@ -10,8 +10,6 @@ import TopBar from "../public/topBar";
 import styles from "../styles/Home.module.css";
 
 
-
-
 {/*
 
 Home.getInitialProps = async ({query}) => {
@@ -43,9 +41,7 @@ export default function Home({data}) {
 
       <TopBar/>
 
-      <a href = 'mag.artmecenate.com'>
-        <img src= "https://da4czav-3sl8rsz.s3.amazonaws.com/public/MecenateMagazine4.png" className = {styles.MecenateMagazineLogo}/>
-      </a>
+      <img src= "https://da4czav-3sl8rsz.s3.amazonaws.com/public/MecenateMagazine4.png" className = {styles.MecenateMagazineLogo}/>
 
       <div className = {styles.contentContainer}>
           

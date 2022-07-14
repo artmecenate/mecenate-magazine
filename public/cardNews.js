@@ -40,7 +40,7 @@ export default function cardNews(props) {
                 </div>
             </div>
           </div>
-          <a href = {props.section + '/' + props.url} className = {styles.cardNewsContainerOverlay}> 
+          <a href = {'/ART/'+props.url} className = {styles.cardNewsContainerOverlay}> 
           </a>
         </div>
 
