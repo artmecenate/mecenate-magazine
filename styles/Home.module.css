@@ -92,6 +92,16 @@
   width: 50px;
 }
 
+/*##############################*/
+/*######## SECTION PAGE ########*/
+/*##############################*/
+
+.sectionHeader{
+
+  font-size: 80px;
+  font-weight:500;
+}
+
 
 /*##############################*/
 /* ###### CARD HIGHLIGHT #######*/
@@ -248,7 +258,7 @@
 
   margin-top: 10px;
   font-size: 22px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .cardNewsTXTsubtitle{
@@ -301,7 +311,7 @@
 
 .articleSection{
 
-  margin-top: 100px;
+  margin-top: 50px;
   font-weight: bold;
   font-size: 22px;
   font-variant: small-caps;
@@ -344,8 +354,10 @@
 
 .articleArticle{
 
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 100px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  text-align: justify;
 
 }
 
@@ -354,7 +366,7 @@
 
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px){ 
 
   .container {
 
@@ -626,7 +638,67 @@
 }
 
 
+
+
+/*#################################*/
+/*########   ARTICLE  #######*/
+/*#################################*/
+
+
+.articleSection{
+
+  margin-top: 50px;
+  font-weight: bold;
+  font-size: 22px;
+  font-variant: small-caps;
+
 }
+
+.articleTitle{
+
+  font-size: 30px;
+  font-weight:500;
+
+}
+
+.articleSubtitle{
+
+  margin-top: 5px;
+  font-size: 20px;
+  color: rgb(75,75,75);
+
+}
+
+.articleAuthorDateBar{
+
+  display: flex;
+  margin-top: 10px;
+  
+}
+
+.articleAuthor{
+
+  font-weight: bold;
+
+}
+
+.articleDate{
+
+  margin-left: 5px;
+
+}
+.articleArticle{
+
+  margin-top: 100px;
+  margin-bottom: 30px;
+  font-size: 20px;
+
+}
+
+
+
+}
+
 
 
 

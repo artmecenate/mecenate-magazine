@@ -76,7 +76,7 @@ ARTArticle.getInitialProps = async ({query}) => {
 */}
 
 
-export default function ARTArticle({data, link}) {
+export default function COMMISSIONERSArticle({data, link}) {
 
 
   return (
@@ -122,21 +122,21 @@ export default function ARTArticle({data, link}) {
         {/*############ SHARING BUTTONS ##############*/}
 
         <FacebookShareButton
-          url={HOME+'ART/'+data.url}
-
+          url={HOME+'COMMISSIONERS/'+data.url}
+          
         >
           <FacebookIcon size={32} round />
         </FacebookShareButton>
 
         <FacebookMessengerShareButton
-          url={HOME+'ART/'+data.url}
+          url={HOME+'COMMISSIONERS/'+data.url}
           appId={''}
         >
           <FacebookMessengerIcon size={32} round />
         </FacebookMessengerShareButton>
 
         <TwitterShareButton
-          url={HOME+'ART/'+data.url}
+          url={HOME+'COMMISSIONERS/'+data.url}
           title={data.title}
         >
           <TwitterIcon size={32} round />
@@ -145,7 +145,7 @@ export default function ARTArticle({data, link}) {
 
 
         <WhatsappShareButton
-          url={HOME+'ART/'+data.url}
+          url={HOME+'COMMISSIONERS/'+data.url}
           title={data.title}
           separator=":: "
         >
@@ -154,14 +154,14 @@ export default function ARTArticle({data, link}) {
 
 
         <PinterestShareButton
-          url={HOME+'ART/'+data.url}
+          url={HOME+'COMMISSIONERS/'+data.url}
           media={data.title}
         >
           <PinterestIcon size={32} round />
         </PinterestShareButton>
 
         <RedditShareButton
-          url={HOME+'ART/'+data.url}
+          url={HOME+'COMMISSIONERS/'+data.url}
           title={data.title}
         >
           <RedditIcon size={32} round />
@@ -169,7 +169,7 @@ export default function ARTArticle({data, link}) {
 
        
         <EmailShareButton
-          url={HOME+'ART/'+data.url}
+          url={HOME+'COMMISSIONERS/'+data.url}
           subject={'Check this article on magMecenate'}
           body={data.title + ': '}
         >
@@ -196,7 +196,7 @@ export async function getStaticPaths() {
   const posts = await res.json()
 
   
-  const paths = posts.map((post) => (post.section == 'ART' ? ({
+  const paths = posts.map((post) => (post.section == 'COMMISSIONERS' ? ({
     params: { articleID: post.url },
   })
   : ''

@@ -5,6 +5,7 @@ import { styled } from '@mui/material/styles';
 
 import styles from "../styles/Home.module.css";
 
+import {BASE_URL, HOME} from '../constants/apiConstants'
 
 
 const BootstrapButton = styled(Button)({
@@ -19,7 +20,29 @@ const BootstrapButton = styled(Button)({
 });
 
 
+const artLink = () => {
 
+  window.location = HOME + 'ART/artIndex'
+
+}
+
+const artistsLink = () => {
+
+  window.location = HOME + 'ARTISTS/artistsIndex'
+
+}
+
+const commissionersLink = () => {
+
+  window.location = HOME + 'COMMISSIONERS/commissionersIndex'
+
+}
+
+const focusLink = () => {
+
+  window.location = HOME + 'focus'
+
+}
 
 export default function menuBar() {
 
@@ -30,10 +53,10 @@ export default function menuBar() {
 
           <div className = {styles.MecenateMagazineBarInside}>  
  
-              <BootstrapButton > art </BootstrapButton>
-              <BootstrapButton> artists </BootstrapButton>
-              <BootstrapButton> commissioners & comissions </BootstrapButton>
-              <BootstrapButton> focus </BootstrapButton>
+              <BootstrapButton onClick ={artLink} > art </BootstrapButton>
+              <BootstrapButton onClick ={artistsLink} > artists </BootstrapButton>
+              <BootstrapButton onClick ={commissionersLink}> commissioners & comissions </BootstrapButton>
+              <BootstrapButton onClick ={focusLink}> focus </BootstrapButton>
           </div>    
           
         </div>

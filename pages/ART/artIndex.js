@@ -1,15 +1,15 @@
 import Head from "next/head";
 
-import mecenateBlogLogo from '../public/MecenateMagazine2.png'
+
 import Button from '@mui/material/Button';
-import MenuBar from "../public/menuBar";
-import CardHighlight from "../public/cardHighlight";
-import CardNews from "../public/cardNews";
-import TopBar from "../public/topBar";
+import MenuBar from "../../public/menuBar";
 
-import styles from "../styles/Home.module.css";
+import CardNews from "../../public/cardNews";
+import TopBar from "../../public/topBar";
 
-import {BASE_URL, HOME} from '../constants/apiConstants'
+import styles from "../../styles/Home.module.css";
+
+import {BASE_URL, HOME} from '../../constants/apiConstants'
 
 
 {/*
@@ -30,7 +30,7 @@ Home.getInitialProps = async ({query}) => {
 
 
 
-export default function Home({data}) {
+export default function artIndex({data}) {
 
 
 
@@ -52,21 +52,19 @@ export default function Home({data}) {
           <MenuBar/>
 
           
-          <div className={styles.cardHighlightContainerGeneral}>
-            <CardHighlight/>
-            <CardHighlight/>
-          </div>
+         
 
 
-          <h1 className={styles.header}>Recent articles</h1>
-
-          <hr/>
+          <h1 className={styles.sectionHeader}> ART </h1>
 
           <div >
 
             { data.map((News, i) => (
 
-                 <CardNews id = {News.id} 
+                <div style = {{display: News.section == 'ART' ? '':'none'}}>
+
+                 <CardNews 
+                           id = {News.id} 
                            title = {News.title} 
                            subtitle = {News.subtitle} 
                            author = {News.author}
@@ -78,7 +76,9 @@ export default function Home({data}) {
                            url = {News.url}
                            date = {News.time_stamp}     
 
-                           key = {i} index = {'n'+i}/> ))              
+                           key = {i} index = {'n'+i}/> 
+                </div>
+                           ))              
             }
          </div>
 
@@ -92,7 +92,7 @@ export default function Home({data}) {
 
 
 
-// This gets called on every request
+
 export async function getStaticProps() {
   // Fetch data from external API
   

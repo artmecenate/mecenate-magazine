@@ -76,7 +76,7 @@ ARTArticle.getInitialProps = async ({query}) => {
 */}
 
 
-export default function ARTArticle({data, link}) {
+export default function ARTISTSArticle({data, link}) {
 
 
   return (
@@ -122,21 +122,22 @@ export default function ARTArticle({data, link}) {
         {/*############ SHARING BUTTONS ##############*/}
 
         <FacebookShareButton
-          url={HOME+'ART/'+data.url}
-
+          url={HOME+'ARTISTS/'+data.url}
+          
+          
         >
           <FacebookIcon size={32} round />
         </FacebookShareButton>
 
         <FacebookMessengerShareButton
-          url={HOME+'ART/'+data.url}
+          url={HOME+'ARTISTS/'+data.url}
           appId={''}
         >
           <FacebookMessengerIcon size={32} round />
         </FacebookMessengerShareButton>
 
         <TwitterShareButton
-          url={HOME+'ART/'+data.url}
+          url={HOME+'ARTISTS/'+data.url}
           title={data.title}
         >
           <TwitterIcon size={32} round />
@@ -145,7 +146,7 @@ export default function ARTArticle({data, link}) {
 
 
         <WhatsappShareButton
-          url={HOME+'ART/'+data.url}
+          url={HOME+'ARTISTS/'+data.url}
           title={data.title}
           separator=":: "
         >
@@ -154,14 +155,14 @@ export default function ARTArticle({data, link}) {
 
 
         <PinterestShareButton
-          url={HOME+'ART/'+data.url}
+          url={HOME+'ARTISTS/'+data.url}
           media={data.title}
         >
           <PinterestIcon size={32} round />
         </PinterestShareButton>
 
         <RedditShareButton
-          url={HOME+'ART/'+data.url}
+          url={HOME+'ARTISTS/'+data.url}
           title={data.title}
         >
           <RedditIcon size={32} round />
@@ -169,7 +170,7 @@ export default function ARTArticle({data, link}) {
 
        
         <EmailShareButton
-          url={HOME+'ART/'+data.url}
+          url={HOME+'ARTISTS/'+data.url}
           subject={'Check this article on magMecenate'}
           body={data.title + ': '}
         >
@@ -196,8 +197,8 @@ export async function getStaticPaths() {
   const posts = await res.json()
 
   
-  const paths = posts.map((post) => (post.section == 'ART' ? ({
-    params: { articleID: post.url },
+  const paths = posts.map((post) => (post.section == 'ARTISTS' ? ({
+    params: { artistsarticleID: post.url },
   })
   : ''
   ))
@@ -229,14 +230,14 @@ export async function getStaticProps({params}) {
   // Fetch data from external API
   
   
-  const result = await fetch(BASE_URL + 'magazine/article/'+ params.articleID);
+  const result = await fetch(BASE_URL + 'magazine/article/'+ params.artistsarticleID);
   const data = await result.json()
 
   // Pass data to the page via props
   return { 
     props: { 
       data: data,
-      link: params.articleID, 
+      link: params.artistsarticleID, 
 
     }, 
   }
