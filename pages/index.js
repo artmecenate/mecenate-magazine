@@ -1,14 +1,10 @@
 import Head from "next/head";
-
-import mecenateBlogLogo from '../public/MecenateMagazine2.png'
 import Button from '@mui/material/Button';
 import MenuBar from "../public/menuBar";
-import CardHighlight from "../public/cardHighlight";
 import CardNews from "../public/cardNews";
+import CardHighlight from "../public/cardHighlight";
 import TopBar from "../public/topBar";
-
 import styles from "../styles/Home.module.css";
-
 import {BASE_URL, HOME} from '../constants/apiConstants'
 
 
@@ -41,46 +37,44 @@ export default function Home({data}) {
 
 
 
-      <TopBar/>
+      
 
-      <a href = {HOME}>
-        <img src= "https://da4czav-3sl8rsz.s3.amazonaws.com/public/MecenateMagazine4.png" className = {styles.MecenateMagazineLogo}/>
+      <a href = {HOME} className = {styles.MecenateMagazineLogoContainer}>
+        <img src= "/MagMecenateLogo.png" className = {styles.MagMecenateLogo}/>
       </a>
+
+      <MenuBar/>
 
       <div className = {styles.contentContainer}>
           
-          <MenuBar/>
+
+          <CardHighlight/>
+
+
+          <h1 className={styles.sectionHeader}> NEWS </h1>
 
           
-          <div className={styles.cardHighlightContainerGeneral}>
-            <CardHighlight/>
-            <CardHighlight/>
-          </div>
 
+            <div >
 
-          <h1 className={styles.header}>Recent articles</h1>
+              { data.map((News, i) => (
 
-          <hr/>
+                  <CardNews id = {News.id} 
+                            title = {News.title} 
+                            subtitle = {News.subtitle} 
+                            author = {News.author}
+                            section = {News.section}
+                            subsection = {News.subsection}
+                            format = {News.format}
+                            content = {News.content}
+                            picture = {News.picture}
+                            url = {News.url}
+                            date = {News.time_stamp}     
+                            key = {i} index = {'n'+i}/> ))              
+              }
+            </div>
 
-          <div >
-
-            { data.map((News, i) => (
-
-                 <CardNews id = {News.id} 
-                           title = {News.title} 
-                           subtitle = {News.subtitle} 
-                           author = {News.author}
-                           section = {News.section}
-                           subsection = {News.subsection}
-                           format = {News.format}
-                           content = {News.content}
-                           picture = {News.picture}
-                           url = {News.url}
-                           date = {News.time_stamp}     
-
-                           key = {i} index = {'n'+i}/> ))              
-            }
-         </div>
+          
 
         </div>
 
@@ -107,3 +101,7 @@ export async function getStaticProps() {
     }, 
   }
 }
+
+
+
+

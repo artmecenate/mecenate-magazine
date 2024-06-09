@@ -2,7 +2,7 @@ import Head from "next/head";
 
 
 import styles from "../styles/Home.module.css";
-
+import {BASE_URL, HOME} from '../constants/apiConstants'
 
 
 
@@ -18,7 +18,9 @@ export default function cardNews(props) {
     <div>
 
         <div className = {styles.cardNewsContainerGeneral}>
-          <div className = {styles.cardNewsContainer}>
+
+
+          <a href = {HOME +props.section + '/' + props.url} className = {styles.cardNewsContainer}>
 
             <img src= {props.picture} className = {styles.cardNewsIMG}/>
 
@@ -39,8 +41,8 @@ export default function cardNews(props) {
                   <div className = {styles.cardNewsTXTauthorDate}> - {props.date} </div>
                 </div>
             </div>
-          </div>
-          <a href = {props.section + '/' + props.url} className = {styles.cardNewsContainerOverlay}> 
+          </a>
+          <a href = {HOME +props.section + '/' + props.url} className = {styles.cardNewsContainerOverlay}> 
           </a>
         </div>
 

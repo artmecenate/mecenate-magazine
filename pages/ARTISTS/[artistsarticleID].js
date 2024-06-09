@@ -11,34 +11,16 @@ import {
 } from 'next-share';
 
 import {
-  PinterestShareButton,
-  PinterestIcon,
-} from 'next-share'
-
-import {
-  RedditShareButton,
-  RedditIcon,
-} from 'next-share'
-
-import {
   TwitterShareButton,
   TwitterIcon,
 } from 'next-share'
 
-import {
-  WeiboShareButton,
-  WeiboIcon,
-} from 'next-share'
 
 import {
   WhatsappShareButton,
   WhatsappIcon,
 } from 'next-share'
 
-import {
-  LinkedinShareButton,
-  LinkedinIcon,
-} from 'next-share'
 
 import {
   FacebookMessengerShareButton,
@@ -93,9 +75,9 @@ export default function ARTISTSArticle({data, link}) {
       </Head>
       
   
-      <TopBar/>
-      <a href = {HOME}>
-        <img src= "https://da4czav-3sl8rsz.s3.amazonaws.com/public/MecenateMagazine4.png" className = {styles.MecenateMagazineLogo}/>
+      
+      <a href = {HOME} className = {styles.MecenateMagazineLogoContainer}>
+        <img src= "/MAGMecenateLogo.png" className = {styles.MecenateMagazineLogo}/>
       </a>
 
       <div className = {styles.contentContainer}>
@@ -121,61 +103,42 @@ export default function ARTISTSArticle({data, link}) {
 
         {/*############ SHARING BUTTONS ##############*/}
 
-        <FacebookShareButton
-          url={HOME+'ARTISTS/'+data.url}
-          
-          
-        >
-          <FacebookIcon size={32} round />
-        </FacebookShareButton>
+        <div className = {styles.socialBar}>
 
-        <FacebookMessengerShareButton
-          url={HOME+'ARTISTS/'+data.url}
-          appId={''}
-        >
-          <FacebookMessengerIcon size={32} round />
-        </FacebookMessengerShareButton>
+          <FacebookShareButton
+            url={HOME+'ARTISTS/'+data.url} 
+            
+          >
+            <FacebookIcon size={32} round />
+          </FacebookShareButton>
 
-        <TwitterShareButton
-          url={HOME+'ARTISTS/'+data.url}
-          title={data.title}
-        >
-          <TwitterIcon size={32} round />
-        </TwitterShareButton>
+          <FacebookMessengerShareButton
+            url={HOME+'ARTISTS/'+data.url}
+            appId={''}
+          >
+            <FacebookMessengerIcon size={32} round />
+          </FacebookMessengerShareButton>
 
+  
 
+          <WhatsappShareButton
+            url={HOME+'ARTISTS/'+data.url}
+            title={data.title}
+            separator=":: "
+          >
+            <WhatsappIcon size={32} round />
+          </WhatsappShareButton>
 
-        <WhatsappShareButton
-          url={HOME+'ARTISTS/'+data.url}
-          title={data.title}
-          separator=":: "
-        >
-          <WhatsappIcon size={32} round />
-        </WhatsappShareButton>
+         
+          <EmailShareButton
+            url={HOME+'ARTISTS/'+data.url}
+            subject={'Check this article on magMecenate'}
+            body={data.title + ': '}
+          >
+            <EmailIcon size={32} round />
+          </EmailShareButton>
 
-
-        <PinterestShareButton
-          url={HOME+'ARTISTS/'+data.url}
-          media={data.title}
-        >
-          <PinterestIcon size={32} round />
-        </PinterestShareButton>
-
-        <RedditShareButton
-          url={HOME+'ARTISTS/'+data.url}
-          title={data.title}
-        >
-          <RedditIcon size={32} round />
-        </RedditShareButton>
-
-       
-        <EmailShareButton
-          url={HOME+'ARTISTS/'+data.url}
-          subject={'Check this article on magMecenate'}
-          body={data.title + ': '}
-        >
-          <EmailIcon size={32} round />
-        </EmailShareButton>
+        </div>
 
  
 

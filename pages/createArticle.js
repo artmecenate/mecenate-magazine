@@ -37,6 +37,10 @@ export default function createArticle() {
   const [format, formatSet] = useState('')
   const [url, urlSet] = useState('')
 
+  const [username, usernameSet] = useState('artmecenate@gmail.com')
+  const [password, passwordSet] = useState('Octavianus_Augustus')
+  const [token, tokenSet] = useState('')
+
   const handleTitle = (e) => {
     
     titleSet(e.target.value)
@@ -78,6 +82,17 @@ export default function createArticle() {
   
   }
 
+    const handlePassword = (e) => {
+
+    passwordSet(e.target.value)
+  
+  }
+  const handleUsername = (e) => {
+
+    usernameSet(e.target.value)
+  
+  }
+
 
   
 
@@ -115,6 +130,33 @@ export default function createArticle() {
 
     };
 
+        const handleLogin = async () => {
+
+
+      const response = await fetch(BASE_URL+'magazine/login',{
+
+        method:'POST',
+        body:JSON.stringify(
+            {
+              email: username,
+              password: password,
+            }
+          )
+
+          
+        ,
+        headers:{
+           
+          'Content-Type': 'application/json',
+        }
+      })
+
+      const data = await response.json()
+      tokenSet(data.access_token)
+      console.log(data)
+      
+    }
+
     const submitArticle = async () => {
 
       let imageData = new FormData();
@@ -133,7 +175,7 @@ export default function createArticle() {
 
       console.log(imageData.get('section'))
 
-      const response = await fetch('https://api.artmecenate.com/magazine/save',{
+      const response = await fetch(BASE_URL+'magazine/save',{
 
         method:'POST',
         body:
@@ -141,6 +183,7 @@ export default function createArticle() {
           imageData
         ,
         headers:{
+          Authorization: 'Bearer '+ token,
           Accept: "application/json",
         }
       })
@@ -159,6 +202,7 @@ export default function createArticle() {
         method:'DELETE',
         
         headers:{
+          'Authorization': 'Bearer '+ token,
           Accept: "application/json",
         }
       })
@@ -183,6 +227,16 @@ export default function createArticle() {
       </a>
 
       <div className = {styles.contentContainer}>
+
+        <div style = {{ marginBottom: '10px', display: 'flex'}}>
+
+          <TextField  onChange={handleUsername} value = {username} label="username" variant="outlined" />
+          <TextField  onChange={handlePassword} value = {password} label="password" variant="outlined" />
+           <Button variant="outlined"  onClick = {handleLogin} >
+           LOGIN
+          </Button>
+
+        </div>
           
         <div className = {styles.createArticleFields}>
           <TextField  onChange={handleTitle} value = {title} label="Title" variant="outlined" />

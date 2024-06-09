@@ -10,25 +10,6 @@ import {
   FacebookIcon,
 } from 'next-share';
 
-import {
-  PinterestShareButton,
-  PinterestIcon,
-} from 'next-share'
-
-import {
-  RedditShareButton,
-  RedditIcon,
-} from 'next-share'
-
-import {
-  TwitterShareButton,
-  TwitterIcon,
-} from 'next-share'
-
-import {
-  WeiboShareButton,
-  WeiboIcon,
-} from 'next-share'
 
 import {
   WhatsappShareButton,
@@ -94,8 +75,8 @@ export default function ARTArticle({data, link}) {
       
   
       <TopBar/>
-      <a href = {HOME}>
-        <img src= "https://da4czav-3sl8rsz.s3.amazonaws.com/public/MecenateMagazine4.png" className = {styles.MecenateMagazineLogo}/>
+      <a href = {HOME} className = {styles.MecenateMagazineLogoContainer}>
+        <img src= "/MecenateMagazine5.png" className = {styles.MecenateMagazineLogo}/>
       </a>
 
       <div className = {styles.contentContainer}>
@@ -135,14 +116,7 @@ export default function ARTArticle({data, link}) {
           <FacebookMessengerIcon size={32} round />
         </FacebookMessengerShareButton>
 
-        <TwitterShareButton
-          url={HOME+'ART/'+data.url}
-          title={data.title}
-        >
-          <TwitterIcon size={32} round />
-        </TwitterShareButton>
-
-
+     
 
         <WhatsappShareButton
           url={HOME+'ART/'+data.url}
@@ -153,19 +127,6 @@ export default function ARTArticle({data, link}) {
         </WhatsappShareButton>
 
 
-        <PinterestShareButton
-          url={HOME+'ART/'+data.url}
-          media={data.title}
-        >
-          <PinterestIcon size={32} round />
-        </PinterestShareButton>
-
-        <RedditShareButton
-          url={HOME+'ART/'+data.url}
-          title={data.title}
-        >
-          <RedditIcon size={32} round />
-        </RedditShareButton>
 
        
         <EmailShareButton

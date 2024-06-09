@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import MenuBar from "../public/menuBar";
 
 import CardNews from "../public/cardNews";
+import CardHighlight from "../public/cardHighlight";
 import TopBar from "../public/topBar";
 
 import styles from "../styles/Home.module.css";
@@ -41,21 +42,43 @@ export default function Focus({data}) {
 
 
 
-      <TopBar/>
+      
 
-      <a href = {HOME}>
-        <img src= "https://da4czav-3sl8rsz.s3.amazonaws.com/public/MecenateMagazine4.png" className = {styles.MecenateMagazineLogo}/>
+      <a href = {HOME} className = {styles.MecenateMagazineLogoContainer}>
+        <img src= "/MagMecenateLogo.png" className = {styles.MagMecenateLogo}/>
       </a>
+
+      <MenuBar/>
 
       <div className = {styles.contentContainer}>
           
-          <MenuBar/>
 
-          
-         
+          <CardHighlight/>
 
 
           <h1 className={styles.sectionHeader}> FOCUS </h1>
+
+          
+
+            <div >
+
+              { data.map((News, i) => (
+
+                  <CardNews id = {News.id} 
+                            title = {News.title} 
+                            subtitle = {News.subtitle} 
+                            author = {News.author}
+                            section = {News.section}
+                            subsection = {News.subsection}
+                            format = {News.format}
+                            content = {News.content}
+                            picture = {News.picture}
+                            url = {News.url}
+                            date = {News.time_stamp}     
+
+                            key = {i} index = {'n'+i}/> ))              
+              }
+            </div>
 
           
 
@@ -67,6 +90,23 @@ export default function Focus({data}) {
   );
 }
 
+
+
+// This gets called on every request
+export async function getStaticProps() {
+  // Fetch data from external API
+  
+
+  const result = await fetch(BASE_URL+'magazine/articles?limit=10&offset=0');
+  const data = await result.json()
+
+  // Pass data to the page via props
+  return { 
+    props: { 
+      data: data 
+    }, 
+  }
+}
 
 
 

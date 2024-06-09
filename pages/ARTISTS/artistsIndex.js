@@ -3,8 +3,8 @@ import Head from "next/head";
 
 import Button from '@mui/material/Button';
 import MenuBar from "../../public/menuBar";
-
 import CardNews from "../../public/cardNews";
+import ArtistCard from "../../public/artistCard";
 import TopBar from "../../public/topBar";
 
 import styles from "../../styles/Home.module.css";
@@ -30,7 +30,7 @@ Home.getInitialProps = async ({query}) => {
 
 
 
-export default function artistsIndex({data}) {
+export default function artIndex({data}) {
 
 
 
@@ -41,19 +41,15 @@ export default function artistsIndex({data}) {
 
 
 
-      <TopBar/>
+      {/*<TopBar/>*/}
 
-      <a href = {HOME}>
-        <img src= "https://da4czav-3sl8rsz.s3.amazonaws.com/public/MecenateMagazine4.png" className = {styles.MecenateMagazineLogo}/>
+      <a href = {HOME} className = {styles.MecenateMagazineLogoContainer}>
+        <img src= "/MagMecenateLogo.png" className = {styles.MecenateMagazineLogo}/>
       </a>
 
+      <MenuBar/>
+
       <div className = {styles.contentContainer}>
-          
-          <MenuBar/>
-
-          
-         
-
 
           <h1 className={styles.sectionHeader}> ARTISTS </h1>
 
