@@ -57,7 +57,7 @@ export default function artIndex({data}) {
 
             { data.map((News, i) => (
 
-                <div style = {{display: News.section == 'ARTISTS' ? '':'none'}}>
+                <div key = {'k'+i} index = {'m'+i} style = {{display: News.section == 'ARTISTS' ? '':'none'}}>
 
                  <CardNews 
                            id = {News.id} 
