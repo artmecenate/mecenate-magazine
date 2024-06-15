@@ -229,14 +229,14 @@ export async function getStaticProps({params}) {
   // Fetch data from external API
   
   
-  const result = await fetch(BASE_URL + 'magazine/article/'+ params.commissionersarticleID);
+  const result = await fetch(BASE_URL + 'magazine/article/'+ params.collectorsarticleID);
   const data = await result.json()
 
   // Pass data to the page via props
   return { 
     props: { 
       data: data,
-      link: params.commissionersarticleID, 
+      link: params.collectorsarticleID, 
 
     }, 
   }
