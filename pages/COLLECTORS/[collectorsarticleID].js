@@ -197,7 +197,7 @@ export async function getStaticPaths() {
 
   
   const paths = posts.map((post) => ({
-    params: { commissionersarticleID: post.url },
+    params: { collectorsarticleID: post.url },
   }
   
   ))
