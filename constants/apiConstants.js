@@ -2,5 +2,5 @@
 export const BASE_URL = 'https://api.artmecenate.com/';
 
 
-export const HOME = 'http://localhost:3001/'
-//export const HOME = 'https://mag.artmecenate.com/'
+//export const HOME = 'http://localhost:3000/'
+export const HOME = 'https://mag.artmecenate.com/'

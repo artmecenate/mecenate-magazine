@@ -77,7 +77,7 @@ export default function ARTISTSArticle({data, link}) {
   
       
       <a href = {HOME} className = {styles.MecenateMagazineLogoContainer}>
-        <img src= "/MAGMecenateLogo.png" className = {styles.MecenateMagazineLogo}/>
+        <img src= "/MagMecenateLogo.png" className = {styles.MagMecenateLogo}/>
       </a>
 
       <div className = {styles.contentContainer}>

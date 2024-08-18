@@ -44,7 +44,7 @@ export default function artIndex({data}) {
       {/*<TopBar/>*/}
 
       <a href = {HOME} className = {styles.MecenateMagazineLogoContainer}>
-        <img src= "/MagMecenateLogo.png" className = {styles.MecenateMagazineLogo}/>
+        <img src= "/MagMecenateLogo.png" className = {styles.MagMecenateLogo}/>
       </a>
 
       <MenuBar/>
